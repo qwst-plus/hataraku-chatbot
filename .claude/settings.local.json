@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l /c/Users/k_ohs/デスクトップ/frontend_only/app/*.tsx /c/Users/k_ohs/デスクトップ/frontend_only/components/*.tsx)",
+      "Bash(python3 -c \":*)",
+      "Bash(identify \"C:/Users/k_ohs/デスクトップ/frontend_only/public/chatbot_icon2.webp\")",
+      "PowerShell(Stop-Process *)",
+      "Skill(claude-api)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(python fix_quotes.py)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
+    ]
+  }
+}
