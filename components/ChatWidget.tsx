@@ -150,7 +150,7 @@ export default function ChatWidget({
     width: fabSize, height: fabSize,
     display: "flex", alignItems: "center", justifyContent: "center",
     cursor: "pointer", background: "transparent", border: "none", padding: 0,
-    boxShadow: "0 0 0 3px rgba(46,197,244,0.5)", borderRadius: "50%",
+    boxShadow: "0 4px 8px rgba(0,0,0,0.28), 0 1px 3px rgba(0,0,0,0.18)", borderRadius: "50%",
     animation: "fabPulse 2.5s infinite",
   };
 
@@ -183,13 +183,12 @@ export default function ChatWidget({
         .sendIconBtn:active { transform: translateY(1px); }
         .sendIconImg { width: 21px !important; height: 18px !important; display: block; object-fit: contain; }
         @keyframes fabPulse {
-          0%   { transform: scale(1);    filter: drop-shadow(0 4px 12px rgba(46,197,244,0.5)); }
-          50%  { transform: scale(1.06); filter: drop-shadow(0 6px 20px rgba(46,197,244,0.8)); }
-          100% { transform: scale(1);    filter: drop-shadow(0 4px 12px rgba(46,197,244,0.5)); }
+          0%   { transform: scale(1); }
+          50%  { transform: scale(1.05); }
+          100% { transform: scale(1); }
         }
         button[aria-label="チャットを開く"]:hover {
           transform: scale(1.1);
-          filter: drop-shadow(0 6px 20px rgba(46,197,244,0.9));
         }
       `}</style>
 

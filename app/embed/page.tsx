@@ -6,15 +6,23 @@ export default function EmbedPage() {
   return (
     <>
       <style>{`
-        :root, html, body, #__next, [data-nextjs-scroll-focus-boundary] {
+        :root {
+          --background: transparent;
+          --card: transparent;
+        }
+        html, body {
           margin: 0;
           padding: 0;
           width: 100%;
           height: 100%;
           background: transparent !important;
+          background-color: transparent !important;
           overflow: hidden;
         }
-
+        body > div, [data-nextjs-scroll-focus-boundary] {
+          background: transparent !important;
+          background-color: transparent !important;
+        }
         .embed-root, .embedNuke {
           background: transparent !important;
           box-shadow: none !important;
