@@ -15,9 +15,8 @@ export default function EmbedPage() {
           overflow: hidden;
         }
 
-        /* ★このページ内の“うっすら四角”を徹底的に殺す */
-        .embedNuke, .embedNuke * {
-          display: block;
+        /* ラッパー自体のアーティファクトだけ除去（子要素の shadow/filter は残す） */
+        .embedNuke {
           box-shadow: none !important;
           filter: none !important;
           outline: 0 !important;
