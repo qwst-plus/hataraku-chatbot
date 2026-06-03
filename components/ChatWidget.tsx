@@ -150,7 +150,7 @@ export default function ChatWidget({
     width: fabSize, height: fabSize,
     display: "flex", alignItems: "center", justifyContent: "center",
     cursor: "pointer", background: "transparent", border: "none", padding: 0,
-    boxShadow: "0 6px 20px rgba(46,197,244,0.55)", borderRadius: "50%",
+    boxShadow: "0 3px 8px rgba(46,197,244,0.45)", borderRadius: "50%",
     animation: "fabPulse 2.5s infinite",
   };
 

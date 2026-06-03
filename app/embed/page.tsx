@@ -6,7 +6,7 @@ export default function EmbedPage() {
   return (
     <>
       <style>{`
-        :root, html, body, #__next {
+        :root, html, body, #__next, [data-nextjs-scroll-focus-boundary] {
           margin: 0;
           padding: 0;
           width: 100%;
@@ -15,8 +15,8 @@ export default function EmbedPage() {
           overflow: hidden;
         }
 
-        /* ラッパー自体のアーティファクトだけ除去（子要素の shadow/filter は残す） */
-        .embedNuke {
+        .embed-root, .embedNuke {
+          background: transparent !important;
           box-shadow: none !important;
           filter: none !important;
           outline: 0 !important;
