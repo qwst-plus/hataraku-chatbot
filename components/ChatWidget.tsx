@@ -140,13 +140,17 @@ export default function ChatWidget({
     border: `1px solid ${THEME.botBorder}`, maxWidth: 260, borderBottomLeftRadius: 6,
   };
 
-  const fabSize = isDesktop ? 120 : 100;
-  const fabImgSize = isDesktop ? 120 : 100;
+  const fabSize = isDesktop ? 72 : 64;
+  const fabImgSize = isDesktop ? 72 : 64;
+  const fabWrapper: React.CSSProperties = {
+    position: "fixed", right: 16, bottom: 16,
+    display: "flex", flexDirection: "column", alignItems: "center", gap: 6,
+  };
   const fabBtn: React.CSSProperties = {
-    position: "fixed", right: 16, bottom: 16, width: fabSize, height: fabSize,
+    width: fabSize, height: fabSize,
     display: "flex", alignItems: "center", justifyContent: "center",
-    cursor: "pointer", background: "transparent", border: "none",
-    boxShadow: "0 8px 28px rgba(46,197,244,0.55)", borderRadius: "50%",
+    cursor: "pointer", background: "transparent", border: "none", padding: 0,
+    boxShadow: "0 6px 20px rgba(46,197,244,0.55)", borderRadius: "50%",
     animation: "fabPulse 2.5s infinite",
   };
 
@@ -277,25 +281,23 @@ export default function ChatWidget({
       )}
 
       {!open && (
-        <button style={fabBtn} onClick={() => { setOpen(true); notifyParent(true); }} aria-label="チャットを開く">
+        <div style={fabWrapper}>
           <div style={{
-            position: "absolute",
-            top: 6,
-            left: "50%",
-            transform: "translateX(-50%)",
             background: "#2EC5F4",
             color: "#fff",
-            fontSize: 11,
+            fontSize: 10,
             fontWeight: 700,
             padding: "3px 8px",
             borderRadius: 999,
             whiteSpace: "nowrap",
-            zIndex: 1,
+            boxShadow: "0 2px 6px rgba(0,0,0,0.15)",
           }}>
             チャットはこちら！
           </div>
-          <Image src={BOT_ICON_SRC} alt="robot" width={fabImgSize} height={fabImgSize} style={{ objectFit: "cover" }} />
-        </button>
+          <button style={fabBtn} onClick={() => { setOpen(true); notifyParent(true); }} aria-label="チャットを開く">
+            <Image src={BOT_ICON_SRC} alt="robot" width={fabImgSize} height={fabImgSize} style={{ objectFit: "cover" }} />
+          </button>
+        </div>
       )}
     </>
   );
