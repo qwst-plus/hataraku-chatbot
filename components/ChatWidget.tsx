@@ -103,10 +103,13 @@ export default function ChatWidget({
     }
   };
 
+  // Always in DOM (same reason as fabBtn) — toggled by visibility
   const chatPanel: React.CSSProperties = {
     position: "fixed", right: 8, bottom: 0, width: 366, height: 520,
     border: "1px solid rgba(0,0,0,0.1)", background: "#fff",
     overflow: "hidden", display: "flex", flexDirection: "column", boxShadow: THEME.shadow,
+    visibility: open ? "visible" : "hidden",
+    pointerEvents: open ? "auto" : "none",
   };
   const header: React.CSSProperties = {
     height: 54, padding: "0 12px", display: "flex", alignItems: "center", gap: 10,
@@ -154,7 +157,7 @@ export default function ChatWidget({
     position: "fixed", right: 8, bottom: 16,
     width: fabSize + 56, height: fabSize + 56,
     display: "flex", flexDirection: "column", alignItems: "center",
-    paddingTop: 24, gap: 6,
+    paddingTop: 8, gap: 4,
     cursor: "pointer", background: "transparent", border: "none",
     borderRadius: "50%",
     animation: "fabPulse 2.5s infinite",
@@ -200,8 +203,7 @@ export default function ChatWidget({
         }
       `}</style>
 
-      {open && (
-        <div style={chatPanel}>
+      <div style={chatPanel}>
           <div style={header}>
             <Image src={BOT_ICON_SRC} alt="robot" width={26} height={26} />
             <strong>{title}</strong>
@@ -285,11 +287,11 @@ export default function ChatWidget({
             </button>
           </div>
         </div>
-      )}
+      </div>
 
       <button style={fabBtn} onClick={() => { setOpen(true); notifyParent(true); }} aria-label="チャットを開く">
-        <div style={fabBubble}>チャットはこちら！</div>
         <Image src={BOT_ICON_SRC} alt="robot" width={fabImgSize} height={fabImgSize} style={{ objectFit: "cover" }} />
+        <div style={fabBubble}>チャットはこちら！</div>
       </button>
     </>
   );
