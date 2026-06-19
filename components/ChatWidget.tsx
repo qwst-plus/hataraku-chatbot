@@ -284,7 +284,6 @@ export default function ChatWidget({
               <Image src="/ei-send.png" alt="" width={21} height={18} className="sendIconImg" />
             </button>
           </div>
-        </div>
       </div>
 
       <button style={fabBtn} onClick={() => { setOpen(true); notifyParent(true); }} aria-label="チャットを開く">
