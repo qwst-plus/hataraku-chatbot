@@ -149,7 +149,7 @@ export default function ChatWidget({
     whiteSpace: "nowrap", boxShadow: "0 2px 6px rgba(0,0,0,0.15)",
     pointerEvents: "none",
   };
-  // Circle large enough to fully contain the bubble in its interior (not at the curved edge)
+  // Always keep in DOM to avoid OOPIF position glitch on remount
   const fabBtn: React.CSSProperties = {
     position: "fixed", right: 8, bottom: 16,
     width: fabSize + 56, height: fabSize + 56,
@@ -158,6 +158,8 @@ export default function ChatWidget({
     cursor: "pointer", background: "transparent", border: "none",
     borderRadius: "50%",
     animation: "fabPulse 2.5s infinite",
+    visibility: open ? "hidden" : "visible",
+    pointerEvents: open ? "none" : "auto",
   };
 
   return (
@@ -285,12 +287,10 @@ export default function ChatWidget({
         </div>
       )}
 
-      {!open && (
-        <button style={fabBtn} onClick={() => { setOpen(true); notifyParent(true); }} aria-label="チャットを開く">
-          <div style={fabBubble}>チャットはこちら！</div>
-          <Image src={BOT_ICON_SRC} alt="robot" width={fabImgSize} height={fabImgSize} style={{ objectFit: "cover" }} />
-        </button>
-      )}
+      <button style={fabBtn} onClick={() => { setOpen(true); notifyParent(true); }} aria-label="チャットを開く">
+        <div style={fabBubble}>チャットはこちら！</div>
+        <Image src={BOT_ICON_SRC} alt="robot" width={fabImgSize} height={fabImgSize} style={{ objectFit: "cover" }} />
+      </button>
     </>
   );
 }
