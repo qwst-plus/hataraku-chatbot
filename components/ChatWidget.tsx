@@ -154,7 +154,7 @@ export default function ChatWidget({
   };
   // Fill entire iframe — outer iframe controls circle shape via border-radius: 10rem
   const fabBtn: React.CSSProperties = {
-    position: "fixed", top: 0, right: 0, bottom: -3, left: 0,
+    position: "fixed", top: 0, right: 0, bottom: 17, left: 0,
     display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
     gap: 4,
     cursor: "pointer", background: "transparent", border: "none",
