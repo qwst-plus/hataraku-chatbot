@@ -143,8 +143,7 @@ export default function ChatWidget({
   const fabSize = isDesktop ? 72 : 64;
   const fabImgSize = isDesktop ? 72 : 64;
   const fabBubble: React.CSSProperties = {
-    position: "fixed", right: 16 + fabSize / 2, bottom: 16 + fabSize + 6,
-    transform: "translateX(50%)",
+    position: "fixed", right: 16, bottom: 16 + fabSize + 6,
     background: "#2EC5F4", color: "#fff",
     fontSize: 10, fontWeight: 700,
     padding: "3px 8px", borderRadius: 999,
@@ -156,7 +155,7 @@ export default function ChatWidget({
     width: fabSize, height: fabSize,
     display: "flex", alignItems: "center", justifyContent: "center",
     cursor: "pointer", background: "transparent", border: "none", padding: 0,
-    boxShadow: "0 4px 8px rgba(0,0,0,0.28), 0 1px 3px rgba(0,0,0,0.18)", borderRadius: "50%",
+    boxShadow: "0 4px 8px rgba(0,0,0,0.28), 0 1px 3px rgba(0,0,0,0.18)",
     animation: "fabPulse 2.5s infinite",
   };
 
