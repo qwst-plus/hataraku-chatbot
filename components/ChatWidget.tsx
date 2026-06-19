@@ -143,7 +143,7 @@ export default function ChatWidget({
   const fabSize = isDesktop ? 72 : 64;
   const fabImgSize = isDesktop ? 72 : 64;
   const fabBubble: React.CSSProperties = {
-    position: "fixed", right: 16, bottom: 16 + fabSize + 6,
+    position: "absolute", bottom: "calc(100% + 6px)", right: 0,
     background: "#2EC5F4", color: "#fff",
     fontSize: 10, fontWeight: 700,
     padding: "3px 8px", borderRadius: 999,
@@ -155,7 +155,7 @@ export default function ChatWidget({
     width: fabSize, height: fabSize,
     display: "flex", alignItems: "center", justifyContent: "center",
     cursor: "pointer", background: "transparent", border: "none", padding: 0,
-    boxShadow: "0 4px 8px rgba(0,0,0,0.28), 0 1px 3px rgba(0,0,0,0.18)",
+    boxShadow: "0 4px 8px rgba(0,0,0,0.28), 0 1px 3px rgba(0,0,0,0.18)", borderRadius: "50%",
     animation: "fabPulse 2.5s infinite",
   };
 
@@ -285,12 +285,10 @@ export default function ChatWidget({
       )}
 
       {!open && (
-        <>
+        <button style={fabBtn} onClick={() => { setOpen(true); notifyParent(true); }} aria-label="チャットを開く">
           <div style={fabBubble}>チャットはこちら！</div>
-          <button style={fabBtn} onClick={() => { setOpen(true); notifyParent(true); }} aria-label="チャットを開く">
-            <Image src={BOT_ICON_SRC} alt="robot" width={fabImgSize} height={fabImgSize} style={{ objectFit: "cover" }} />
-          </button>
-        </>
+          <Image src={BOT_ICON_SRC} alt="robot" width={fabImgSize} height={fabImgSize} style={{ objectFit: "cover" }} />
+        </button>
       )}
     </>
   );
