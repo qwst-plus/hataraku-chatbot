@@ -103,9 +103,9 @@ export default function ChatWidget({
     }
   };
 
-  // Always in DOM (same reason as fabBtn) — toggled by visibility
+  // Fill the entire iframe viewport — outer iframe controls size/shape
   const chatPanel: React.CSSProperties = {
-    position: "fixed", right: 8, bottom: 0, width: 366, height: 520,
+    position: "fixed", top: 0, right: 0, bottom: 0, left: 0,
     border: "1px solid rgba(0,0,0,0.1)", background: "#fff",
     overflow: "hidden", display: "flex", flexDirection: "column", boxShadow: THEME.shadow,
     visibility: open ? "visible" : "hidden",
@@ -152,14 +152,12 @@ export default function ChatWidget({
     whiteSpace: "nowrap", boxShadow: "0 2px 6px rgba(0,0,0,0.15)",
     pointerEvents: "none",
   };
-  // Always keep in DOM to avoid OOPIF position glitch on remount
+  // Fill entire iframe — outer iframe controls circle shape via border-radius: 10rem
   const fabBtn: React.CSSProperties = {
-    position: "fixed", right: 8, bottom: 16,
-    width: fabSize + 56, height: fabSize + 56,
-    display: "flex", flexDirection: "column", alignItems: "center",
-    paddingTop: 8, gap: 4,
+    position: "fixed", top: 0, right: 0, bottom: 0, left: 0,
+    display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+    gap: 4,
     cursor: "pointer", background: "transparent", border: "none",
-    borderRadius: "50%",
     animation: "fabPulse 2.5s infinite",
     visibility: open ? "hidden" : "visible",
     pointerEvents: open ? "none" : "auto",
