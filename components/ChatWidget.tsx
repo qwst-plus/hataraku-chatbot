@@ -104,7 +104,7 @@ export default function ChatWidget({
   };
 
   const chatPanel: React.CSSProperties = {
-    position: "fixed", right: 0, bottom: 0, width: 366, height: 520,
+    position: "fixed", right: 8, bottom: 0, width: 366, height: 520,
     border: "1px solid rgba(0,0,0,0.1)", background: "#fff",
     overflow: "hidden", display: "flex", flexDirection: "column", boxShadow: THEME.shadow,
   };
@@ -151,12 +151,12 @@ export default function ChatWidget({
   };
   // Circle large enough to fully contain the bubble in its interior (not at the curved edge)
   const fabBtn: React.CSSProperties = {
-    position: "fixed", right: 16, bottom: 16,
+    position: "fixed", right: 8, bottom: 16,
     width: fabSize + 56, height: fabSize + 56,
     display: "flex", flexDirection: "column", alignItems: "center",
     paddingTop: 24, gap: 6,
     cursor: "pointer", background: "transparent", border: "none",
-    boxShadow: "0 4px 8px rgba(0,0,0,0.28), 0 1px 3px rgba(0,0,0,0.18)", borderRadius: "50%",
+    borderRadius: "50%",
     animation: "fabPulse 2.5s infinite",
   };
 
