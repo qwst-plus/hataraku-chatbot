@@ -105,7 +105,7 @@ export default function ChatWidget({
 
   const chatPanel: React.CSSProperties = {
     position: "fixed", right: 0, bottom: 0, width: 366, height: 520,
-    borderRadius: 18, border: "1px solid rgba(0,0,0,0.1)", background: "#fff",
+    border: "1px solid rgba(0,0,0,0.1)", background: "#fff",
     overflow: "hidden", display: "flex", flexDirection: "column", boxShadow: THEME.shadow,
   };
   const header: React.CSSProperties = {

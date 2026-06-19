@@ -31,7 +31,7 @@ export default function FloatingChatLauncher({
           "fixed z-[999999] right-4 bottom-[112px] lg:bottom-[180px]",
           "w-[380px] h-[560px]",
           "max-w-[calc(100vw-32px)] max-h-[calc(100vh-140px)]",
-          "rounded-[24px] overflow-hidden shadow-2xl",
+          "overflow-hidden shadow-2xl",
           "bg-white",
           open ? "block" : "hidden",
         ].join(" ")}
